@@ -27,6 +27,7 @@
   },
   "scripts": {
     "test": "jest",
+    "watch": "jest --watch",
     "generate": "plop",
     "lint": "eslint"
   },
