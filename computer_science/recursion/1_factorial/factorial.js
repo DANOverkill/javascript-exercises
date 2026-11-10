@@ -4,13 +4,7 @@ const factorial = function (int) {
   } else if (int === 0) {
     return 1;
   } else {
-    let solution = int;
-    let currentInt = int;
-    if (currentInt === 1) {
-      return solution;
-    } else {
-      return (solution = solution * factorial(int - 1));
-    }
+    return (int = int * factorial(int - 1));
   }
 };
 
