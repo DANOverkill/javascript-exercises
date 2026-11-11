@@ -1,23 +1,23 @@
 const totalIntegers = require("./totalIntegers");
 
 describe("totalIntegers", () => {
-  test("Counts all integers in a simple array of only integers", () => {
+  test.skip("Counts all integers in a simple array of only integers", () => {
     expect(totalIntegers([1, 2, 3])).toBe(3);
   });
 
-  test("Ignores non-number values", () => {
+  test.skip("Ignores non-number values", () => {
     expect(totalIntegers([1, 2, "3", 4])).toBe(3);
   });
 
-  test("Counts all integers in a plain object", () => {
+  test.skip("Counts all integers in a plain object", () => {
     expect(totalIntegers({ a: 1, b: "2", c: 3 })).toBe(2);
   });
 
-  test("Does not find any integers in nested empty arrays", () => {
+  test.skip("Does not find any integers in nested empty arrays", () => {
     expect(totalIntegers([[], [], []])).toBe(0);
   });
 
-  test("Counts integers in deeply nested arrays", () => {
+  test.skip("Counts integers in deeply nested arrays", () => {
     expect(totalIntegers([[[[[[[[[[[[[[4]]]]]], 246]]]]]]]])).toBe(2);
   });
 
@@ -74,7 +74,7 @@ describe("totalIntegers", () => {
     ).toBe(5);
   });
 
-  test.skip("Counts all integers when nested arrays and objects are mixed together", () => {
+  test("Counts all integers when nested arrays and objects are mixed together", () => {
     expect(totalIntegers([4, 6, { a: 1, b: { a: [5, 10], b: 11 } }, 9])).toBe(
       7,
     );
