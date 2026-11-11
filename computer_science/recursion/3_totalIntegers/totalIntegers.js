@@ -3,11 +3,12 @@ const totalIntegers = function (input) {
   if (Array.isArray(input)) {
     input.forEach((element) => {
       if (typeof element === "number" && element % 1 === 0) {
-        console.log(element);
         count++;
       } else if (Array.isArray(element)) {
-        console.log(element);
         count = count + totalIntegers(element);
+      } else if (typeof element === "object") {
+        let convertedArr = Object.values(element);
+        count = count + totalIntegers(convertedArr);
       }
     });
     return count;
