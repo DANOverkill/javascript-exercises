@@ -6,13 +6,13 @@ const totalIntegers = function (input) {
         count++;
       } else if (Array.isArray(element)) {
         count = count + totalIntegers(element);
-      } else if (typeof element === "object") {
+      } else if (typeof element === "object" && element !== null) {
         let convertedArr = Object.values(element);
         count = count + totalIntegers(convertedArr);
       }
     });
     return count;
-  } else if (typeof input === "object") {
+  } else if (typeof input === "object" && input !== null) {
     let convertedArr = Object.values(input);
     return totalIntegers(convertedArr);
   } else {
