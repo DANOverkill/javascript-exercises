@@ -7,13 +7,12 @@ function buildMid(array, n) {
   return newArr;
 }
 
-const pascal = function (n) {
+const pascal = function (n, array = [1, 1]) {
   if (n === 1) return [1];
-  else if (n === 2) return [1, 1];
+  else if (array.length >= n) return array;
   else {
-    let array = [1, 1];
-    while (array.length < n) array = buildMid(array, array.length);
-    return array;
+    const newArr = buildMid(array, array.length);
+    return pascal(n, newArr);
   }
 };
 
