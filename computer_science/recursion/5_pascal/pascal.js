@@ -1,5 +1,5 @@
 function buildMid(array, n) {
-  const arrMidValues = Array.from({ length: n - 2 }, (_, index) => {
+  const arrMidValues = Array.from({ length: n - 1 }, (_, index) => {
     return array[index] + array[index + 1];
   });
   console.log(arrMidValues);
@@ -12,9 +12,8 @@ const pascal = function (n) {
   else if (n === 2) return [1, 1];
   else {
     let array = [1, 1];
-    array = buildMid(array, array.length);
-    if ((array.length = n + 1)) return array;
-    else buildMid(buildMid(array, array.length));
+    while (array.length < n) array = buildMid(array, array.length);
+    return array;
   }
 };
 
