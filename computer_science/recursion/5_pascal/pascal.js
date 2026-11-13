@@ -2,7 +2,6 @@ function buildMid(array, n) {
   const arrMidValues = Array.from({ length: n - 1 }, (_, index) => {
     return array[index] + array[index + 1];
   });
-  console.log(arrMidValues);
   const newArr = [1, ...arrMidValues, 1];
   return newArr;
 }
